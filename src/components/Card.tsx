@@ -10,6 +10,8 @@ export default function Card({ FirstName }: userProps) {
   const [expiry, setExpiry] = useState('')
   const [cardType, setCardType] = useState('none')
 
+  const [expiryError, setExpiryError] = useState(false)
+
   const validateExpiry = () => {
     const currentDate = new Date()
     const [month, year] = expiry.split('/').map(Number)
@@ -54,12 +56,17 @@ export default function Card({ FirstName }: userProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     validateExpiry()
-    if (validateExpiry()) {
+    if (validateExpiry() && cvc.length === 3 && creditCardNumber) {
       console.log(
         `credit card number: ${creditCardNumber}; \n cvc: ${cvc} \n expiry: ${expiry}`
       )
+      setExpiryError(false)
+      setCreditCardNumber('')
+      setCvc('')
+      setExpiry('')
     } else {
       console.log('The expiry is not valid')
+      setExpiryError(true)
     }
   }
 
@@ -112,6 +119,7 @@ export default function Card({ FirstName }: userProps) {
             id="cc-number"
             placeholder="e.g 0000 0000 0000 0000"
             maxLength={19}
+            minLength={16}
             value={creditCardNumber}
             onChange={handleCardNumberChange}
             required
@@ -127,6 +135,7 @@ export default function Card({ FirstName }: userProps) {
               type="text"
               name="cvc"
               id="cvc"
+              minLength={3}
               maxLength={3}
               inputMode="numeric"
               placeholder="eg. 000"
@@ -140,7 +149,11 @@ export default function Card({ FirstName }: userProps) {
               Expiry
             </label>
             <input
-              className="bg-transparent w-24 py-2 px-4"
+              className={
+                expiryError
+                  ? 'bg-transparent w-24 py-2 px-4 border-2 border-red-300 rounded-lg'
+                  : 'bg-transparent w-24 py-2 px-4 border-2 border-transparent rounded-lg'
+              }
               type="text"
               name="expiry"
               id="expiry"
