@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './Card'
 
 export default function App() {
@@ -7,11 +7,10 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello World</h1>
+    <div className="bg-sky-200 h-screen flex justify-center items-center">
+      <div className="bg-gradient-to-bl from-slate-200 to-slate-200 via-white w-96 p-8 rounded-lg shadow-xl">
         <Card FirstName={User.FirstName} />
-      </header>
+      </div>
     </div>
   )
 }
