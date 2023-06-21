@@ -65,7 +65,9 @@ export default function Card({ FirstName }: userProps) {
 
   return (
     <div className="p-8">
-      <p className="font-bold text-center text-xl py-4 ">Welcome {FirstName}</p>
+      <h2 className="font-bold text-center text-xl py-4 ">
+        Welcome {FirstName}
+      </h2>
       <p className="text-sm text-center text-slate-600 pb-16">
         Enter your card details below:
       </p>

@@ -15,7 +15,7 @@ export default function App() {
     <div className="bg-sky-200 h-screen flex justify-center items-center flex-wrap">
       <div className="bg-gradient-to-bl from-slate-200 to-slate-200 via-white w-96 rounded-lg shadow-xl h-custom-height">
         <div className="border-b-2">
-          <div className="p-4 flex items-center text-slate-700">
+          <header className="p-4 flex items-center text-slate-700">
             {menu ? (
               <>
                 <IoArrowBack
@@ -23,7 +23,7 @@ export default function App() {
                   onClick={() => setMenu(false)}
                   data-testid="back-button"
                 />
-                <p className="pl-10">Menu</p>
+                <h1 className="pl-10">Menu</h1>
               </>
             ) : (
               <>
@@ -32,10 +32,10 @@ export default function App() {
                   onClick={() => setMenu(true)}
                   data-testid="burger-icon"
                 />
-                <p className="pl-10">Register card form</p>
+                <h1 className="pl-10">Register card form</h1>
               </>
             )}
-          </div>
+          </header>
         </div>
         <div>{menu ? <Menu /> : <Card FirstName={User.FirstName} />}</div>
       </div>
