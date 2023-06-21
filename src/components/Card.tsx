@@ -113,7 +113,7 @@ export default function Card({ FirstName }: userProps) {
             Credit Card Number
           </label>
           <input
-            className="bg-transparent py-2 px-4"
+            className="bg-transparent py-2 px-4 border-2 border-transparent rounded-lg"
             type="text"
             name="cc-number"
             id="cc-number"
@@ -131,7 +131,7 @@ export default function Card({ FirstName }: userProps) {
               CVC
             </label>
             <input
-              className="bg-transparent w-24 py-2 px-4"
+              className="bg-transparent w-24 py-2 px-4 border-2 border-transparent rounded-lg"
               type="text"
               name="cvc"
               id="cvc"
