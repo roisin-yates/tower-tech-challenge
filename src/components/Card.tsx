@@ -64,8 +64,8 @@ export default function Card({ FirstName }: userProps) {
   }
 
   return (
-    <div>
-      <p className="font-bold text-center text-xl py-4">Welcome {FirstName}</p>
+    <div className="p-8">
+      <p className="font-bold text-center text-xl py-4 ">Welcome {FirstName}</p>
       <p className="text-sm text-center text-slate-600 pb-16">
         Enter your card details below:
       </p>
@@ -150,7 +150,7 @@ export default function Card({ FirstName }: userProps) {
             />
           </div>
         </div>
-        <button className="mt-10  py-2 px-4 w-full bg-gradient-to-br from-sky-700 to-sky-700 via-sky-600 text-sky-100 text-lg font-bold rounded-lg hover:">
+        <button className="mt-10  py-2 px-4 w-full bg-gradient-to-br from-sky-500 to-sky-700 text-sky-100 text-lg font-bold rounded-lg hover:shadow-xl cursor-pointer">
           Submit
         </button>
       </form>

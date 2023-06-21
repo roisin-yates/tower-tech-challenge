@@ -6,7 +6,7 @@ afterEach(() => {
   cleanup()
 })
 
-const DefaultUser = {
+export const DefaultUser = {
   FirstName: 'Alice',
 }
 
