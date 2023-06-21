@@ -1,6 +1,10 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import App from '../components/App'
+
+afterEach(() => {
+  cleanup()
+})
 
 test('renders hello world', () => {
   render(<App />)
